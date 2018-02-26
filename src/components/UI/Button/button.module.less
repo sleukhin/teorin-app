@@ -1,0 +1,39 @@
+@import '../../../shared/less/variables.less';
+
+.btn {
+  margin: 10px;
+  padding: 10px 60px;
+  border: none;
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  border-radius: 2px;
+  line-height: 1.75;
+  cursor: pointer;
+}
+.accent {
+  background-color: @accent;
+
+  &:hover {
+    background-color: lighten(@accent, 5%);
+  }
+  &:active {
+    background-color: darken(@accent, 5%);
+  }
+}
+.default {
+  background-color: @grey;
+
+  &:hover {
+    background-color: lighten(@grey, 5%);
+  }
+  &:active {
+    background-color: darken(@grey, 5%);
+  }
+}
+
+@media @mediumDevices, @largeDevices, @extraLargeDevices {
+  .btn {
+    font-size: 20px;
+  }
+}
