@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-import Portfolio from './containers/Portfolio';
-import LandingSection from './components/UI/LandingSection';
-import Form from './components/Form';
-import Blog from './containers/Blog';
+import MainPage from './components/MainPage';
 import Footer from './components/Footer';
 
 class App extends Component {
@@ -11,10 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Portfolio />
-        <LandingSection />
-        <Form />
-        <Blog />
+        <MainPage />
         <Footer />
       </div>
     );

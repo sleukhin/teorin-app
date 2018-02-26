@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Button from '../../components/UI/Button';
-import styles from './blog.module.less';
+import BlogItems from '../../../components/BlogItems';
 
-class Blog extends Component {
+class BlogSection extends Component {
   state = {
     posts: [
       { id: 1, url: '/', imgUrl: '/images/1.jpg', header: 'We Are Champions At Last Month', text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo  rem perferendis provident dolor nesciunt minima consectetur ipsum, architecto...' },
@@ -12,38 +11,13 @@ class Blog extends Component {
       { id: 5, url: '/', imgUrl: '/images/5.jpg', header: 'We Are Champions At Last Month', text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo  rem perferendis provident dolor nesciunt minima consectetur ipsum, architecto...' },
       { id: 6, url: '/', imgUrl: '/images/6.jpg', header: 'We Are Champions At Last Month', text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo  rem perferendis provident dolor nesciunt minima consectetur ipsum, architecto...' },
     ]
-  }
+  };
 
   render() {
     const { posts } = this.state;
 
-    return (
-      <section className={styles.blogSection}>
-        <div className={styles.container}>
-          <h2>Ready To Read Our Blog?</h2>
-          <div className={styles.blog}>
-            {
-              posts.map(post => (
-                <a key={post.id} href={post.url} className={styles.blogItem}>
-                  <span
-                    className={styles.blogItemImg}
-                    style={{ backgroundImage: `url("${post.imgUrl}")` }}
-                  />
-                  <span className={styles.blogItemContent}>
-                    <h4>{post.header}</h4>
-                    <p>{post.text}</p>
-                  </span>
-                </a>
-              ))
-            }
-            <div className={styles.buttonCase}>
-              <Button btnType="accent">View Blog</Button>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
+    return <BlogItems posts={posts} />;
   }
 }
 
-export default Blog;
+export default BlogSection;
