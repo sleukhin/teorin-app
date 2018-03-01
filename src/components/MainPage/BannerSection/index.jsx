@@ -1,12 +1,12 @@
 import React from 'react';
-import Button from '../UI/Button';
-import styles from './header.module.less';
+import Button from '../../UI/Button';
+import styles from './bannerSection.module.less';
 
 const inlineStyle = {
   backgroundImage: 'url("./images/0-header.jpg")'
 };
 
-const Header = props => (
+const BannerSection = props => (
   <header style={inlineStyle} className={styles.mainHeader}>
     <div className={styles.headerContent}>
       <h1>We Are
@@ -21,4 +21,4 @@ const Header = props => (
   </header>
 );
 
-export default Header;
+export default BannerSection;

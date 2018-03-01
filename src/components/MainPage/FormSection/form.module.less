@@ -4,11 +4,6 @@
   padding: 30px 0;
   background-color: @dark-grey;
 
-  form {
-    display: grid;
-    grid-gap: @gutter;
-    grid-template-columns: 1fr;
-  }
   input {
     border: none;
     box-sizing: border-box;
@@ -29,11 +24,10 @@
     }
   }
 }
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 @gutter;
+.grid {
   display: grid;
+  grid-gap: @gutter;
+  grid-template-columns: 1fr;
 }
 .btn {
   font-size: 17px;
@@ -45,17 +39,13 @@
 }
 
 @media @smallDevices, @mediumDevices {
-  .formSection {
-    form {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media @largeDevices, @extraLargeDevices {
-  .formSection {  
-    form {
-      grid-template-columns: repeat(4, 1fr);
-    }
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

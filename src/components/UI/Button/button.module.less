@@ -1,15 +1,8 @@
 @import '../../../shared/less/variables.less';
+@import '../../../shared/less/mixins.less';
 
 .btn {
-  margin: 10px;
-  padding: 10px 60px;
-  border: none;
-  font-size: 18px;
-  font-weight: 800;
-  color: white;
-  border-radius: 2px;
-  line-height: 1.75;
-  cursor: pointer;
+  .btnMixin();
 }
 .accent {
   background-color: @accent;
