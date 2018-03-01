@@ -1,30 +1,9 @@
 @import '../../shared/less/variables.less';
 
-.blogSection {
-  padding: 50px 0;
-
-  h2 {
-    margin-top: 0;
-    margin-bottom: 50px;
-    font-size: 34px;
-    font-weight: 800;
-    line-height: 1.2;
-  }
-}
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 @gutter;
-}
 .blog {
   display: grid;
   grid-gap: @gutter;
   grid-template-columns: 1fr;
-}
-.buttonCase {
-  grid-column: initial;
-  text-align: center;
-  padding: @gutter @gutter 0;
 }
 
 @media @mediumDevices {
@@ -33,9 +12,6 @@
   }
   .blog {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .buttonCase {
-    grid-column: ~'1 / 3';
   }
 }
 
@@ -46,9 +22,6 @@
   .blog {
     grid-template-columns: repeat(3, 1fr);
   }
-  .buttonCase {
-    grid-column: ~'1 / 4';
-  }
 }
 
 @media @extraLargeDevices {
@@ -57,8 +30,5 @@
   }
   .blog {
     grid-template-columns: repeat(4, 1fr);
-  }
-  .buttonCase {
-    grid-column: ~'1 / 5';
   }
 }

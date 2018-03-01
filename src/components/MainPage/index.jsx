@@ -1,14 +1,16 @@
 import React from 'react';
 import BlogSection from './BlogSection';
-import Portfolio from '../../components/Portfolio';
+import PortfolioSection from './PortfolioSection';
 import LandingSection from './LandingSection';
-import Form from './Form';
+import BannerSection from './BannerSection';
+import FormSection from './FormSection';
 
 const MainPage = () => (
   <React.Fragment>
-    <Portfolio />
+    <BannerSection />
+    <PortfolioSection />
     <LandingSection />
-    <Form />
+    <FormSection />
     <BlogSection />
   </React.Fragment>
 );
