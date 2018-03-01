@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import BlogItems from '../../../components/BlogItems';
 import Container from '../../UI/Container';
-import Button from '../../UI/Button';
 
 import styles from './blogSection.module.less';
+import linkStyles from '../../../shared/less/link.module.less';
 
 class BlogSection extends Component {
   state = {
@@ -27,7 +28,7 @@ class BlogSection extends Component {
           <BlogItems items={posts} />
         </Container>
         <div className={styles.buttonCase}>
-          <Button btnType="accent">View Blog</Button>
+          <Link className={linkStyles.linkBtnAccess} to='/blog'>View Blog</Link>
         </div>
       </section>
     );

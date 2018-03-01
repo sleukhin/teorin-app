@@ -1,49 +1,67 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import BlogItems from '../../components/BlogItems';
+import Container from '../../components/UI/Container';
+import Button from '../../components/UI/Button';
+
+import styles from './blog.module.less';
+
+const preparePosts = data => {
+  const posts = [];
+  for (let key in data) {
+    posts.push({
+      id: key,
+      ...data[key]
+    });
+  }
+  return posts;
+}
 
 class Blog extends Component {
   state = {
-    posts: [
-      { id: 1, url: '/', imageUrl: '/images/1.jpg', title: 'We Are Champions At Last Month', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo  rem perferendis provident dolor nesciunt minima consectetur ipsum, architecto...' },
-      { id: 2, url: '/', imageUrl: '/images/2.jpg', title: 'We Are Champions At Last Month', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo  rem perferendis provident dolor nesciunt minima consectetur ipsum, architecto...' },
-      { id: 3, url: '/', imageUrl: '/images/3.jpg', title: 'We Are Champions At Last Month', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo  rem perferendis provident dolor nesciunt minima consectetur ipsum, architecto...' },
-    ]
+    posts: [],
+    pageIndex: 0
   };
-
-  preparePosts(data) {
-    const posts = [];
-    for (let key in data) {
-      posts.push({
-        id: key,
-        ...data[key]
-      });
-    }
-    return posts;
-  }
-
-  setPosts(posts) {
-    this.setState({ posts: posts });
-  }
-
+ 
   componentDidMount() {
-    axios.get('https://teorin-core.firebaseio.com/blog.json')
-      .then(response => {
-        this.setPosts(this.preparePosts(response.data));
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    const { pageIndex } = this.state;
+    this.getPosts(pageIndex);
+  }
+
+  setPagePosts(posts, pageIndex) {
+    this.setState(prevState => ({
+      pageIndex,
+      posts: [...prevState.posts, ...posts]
+    }));
+  }
+
+  getPosts(pageIndex) {
+    const endIndex = pageIndex + 17;
+    const query = `?orderBy="$key"&startAt="${pageIndex}"&endAt="${endIndex}"`;
+    axios.get('https://teorin-core.firebaseio.com/blog.json' + query)
+    .then(response => {
+      this.setPagePosts(preparePosts(response.data), endIndex + 1);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
+
+  onClickHandler = () => {
+    this.getPosts(this.state.pageIndex);
   }
 
   render() {
     const { posts } = this.state;
 
     return (
-      <React.Fragment>
+      <Container>
         <h1>Blog</h1>
         <BlogItems items={posts} />
-      </React.Fragment>
+        <div className={styles.buttonCase}>
+          <Button onClick={this.onClickHandler} btnType='default'>Load More</Button>
+        </div>
+      </Container>
     );
   }
 }

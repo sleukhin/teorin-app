@@ -9,9 +9,12 @@ class BlogItems extends Component {
     return (
       <div className={styles.blog}>
         {
-          items.map(item => (
-            <BlogItem key={item.id} item={item} />
-          ))
+          items.map((item, index) => {
+            const itemType = ((index - 2) % 6) === 0 || ((index - 3) % 6) === 0
+                              ? 'big'
+                              : null;
+            return <BlogItem key={item.id} itemType={itemType} item={item} />;
+          })
         }
       </div>
     );

@@ -1,0 +1,22 @@
+@import './variables.less';
+@import './mixins.less';
+
+.linkBtnAccess {
+  .btnMixin();
+  display: inline-block;
+  text-decoration: none;
+
+  background-color: @accent;
+  &:hover {
+    background-color: lighten(@accent, 5%);
+  }
+  &:active {
+    background-color: darken(@accent, 5%);
+  }
+}
+
+@media @mediumDevices, @largeDevices, @extraLargeDevices {
+  .linkBtnAccess {
+    font-size: 20px;
+  }
+}

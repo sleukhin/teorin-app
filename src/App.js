@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 import MainPage from './components/MainPage';
 import Footer from './components/Footer';
 import Blog from './containers/Blog';
-
 class App extends Component {
   render() {
     return (
