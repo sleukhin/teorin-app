@@ -1,0 +1,45 @@
+@import (reference) '../../shared/less/variables.less';
+
+.header {
+  width: 100%;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 0 2px 4px #f0f1f2;
+}
+
+.logo {
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.headerContent {
+  height: 62px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.navigation {
+  display: grid;
+  align-content: center;
+  text-align: right;
+}
+
+.navLinks {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    padding: 0 18px 0 18px;
+
+    a {
+      color: #73849a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+}

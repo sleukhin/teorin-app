@@ -3,11 +3,11 @@ import Button from '../../UI/Button';
 import styles from './bannerSection.module.less';
 
 const inlineStyle = {
-  backgroundImage: 'url("./images/0-header.jpg")'
+  backgroundImage: 'url("./images/0-banner.jpg")'
 };
 
 const BannerSection = props => (
-  <header style={inlineStyle} className={styles.mainHeader}>
+  <section style={inlineStyle} className={styles.mainHeader}>
     <div className={styles.headerContent}>
       <h1>We Are
         <span className={styles.companyName}>
@@ -18,7 +18,7 @@ const BannerSection = props => (
       <Button btnType="accent" btnClass={styles.btn}>Explore</Button>
       <Button btnType="default" btnClass={styles.btn}>View Projects</Button>
     </div>
-  </header>
+  </section>
 );
 
 export default BannerSection;
