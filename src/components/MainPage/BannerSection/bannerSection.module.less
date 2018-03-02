@@ -1,11 +1,12 @@
 @import "../../../shared/less/variables.less";
 
 .mainHeader {
-  min-height: 100vh;
+  min-height: ~"calc(100vh - 62px)";
   background-position: center;
   background-size: cover;
   align-content: center;
   display: grid;
+  position: relative;
 
   &::before {
     content: '';
