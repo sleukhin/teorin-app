@@ -5,7 +5,7 @@ const Footer = () => (
   <footer className={styles.footer}>
     <div className={styles.container}>
       <div className={styles.logo}>
-        We Are Real <span>Creators</span>
+        We Are Real <span>Teorin Core</span>
       </div>
       <div className={styles.copyright}>~©~</div>
     </div>
