@@ -48,9 +48,7 @@ class BlogItemDetail extends Component {
             src={item.imageUrl}
             alt={item.title}
           />
-          <span >
-            <p>{item.body}</p>
-          </span>
+          <p>{item.body}</p>
         </div>
       );
     }
