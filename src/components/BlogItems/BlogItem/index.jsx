@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './blogItems.module.less';
 
-const BlogItem = ({ item, itemType = 'small' }) => {
+const BlogItem = ({ match, item, itemType = 'small' }) => {
   const cssClasses = [styles.blogItem, styles[itemType]].join(' ');
 
   return (
-    <a href={item.url} className={cssClasses}>
+    <Link to={`/blog/${item.id}`} className={cssClasses}>
       <span
         className={styles.blogItemImg}
         style={{ backgroundImage: `url("${item.imageUrl}")` }}
@@ -14,7 +15,7 @@ const BlogItem = ({ item, itemType = 'small' }) => {
         <h4>{item.title}</h4>
         <p>{item.body}</p>
       </span>
-    </a>
+    </Link>
   );
 };
 
