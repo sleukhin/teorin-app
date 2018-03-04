@@ -26,7 +26,7 @@ const LandingSection = props => (
           <img
             src="./images/example.jpg"
             alt="Example"
-            className={styles.imageResponsive}
+            className={styles.imgResponsive}
           />
         </div>
       </div>
