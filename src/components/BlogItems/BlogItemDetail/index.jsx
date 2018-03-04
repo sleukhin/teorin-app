@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from '../../../shared/axios-teorin';
 import Conatainer from '../../UI/Container';
 import styles from './blogItemDetail.module.less';
 
@@ -19,10 +19,14 @@ class BlogItemDetail extends Component {
 
   componentDidMount() {
     const { id } = this.props.match.params;
+    this.fetchPost(id);
+  }
+
+  fetchPost(id) {
     const query = `?orderBy="$key"&&equalTo="${id}"`;
 
     axios
-      .get('https://teorin-core.firebaseio.com/blog.json' + query)
+      .get('blog.json' + query)
       .then(response => {
         this.setState({ item: preparePost(response.data) });
       })

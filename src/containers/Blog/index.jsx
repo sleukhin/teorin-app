@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from '../../shared/axios-teorin';
 import BlogItems from '../../components/BlogItems';
 import Container from '../../components/UI/Container';
 import Button from '../../components/UI/Button';
@@ -25,7 +25,7 @@ class Blog extends Component {
  
   componentDidMount() {
     const { pageIndex } = this.state;
-    this.getPosts(pageIndex);
+    this.fetchPosts(pageIndex);
   }
 
   setPagePosts(posts, pageIndex) {
@@ -35,10 +35,10 @@ class Blog extends Component {
     }));
   }
 
-  getPosts(pageIndex) {
+  fetchPosts(pageIndex) {
     const endIndex = pageIndex + 17;
     const query = `?orderBy="$key"&startAt="${pageIndex}"&endAt="${endIndex}"`;
-    axios.get('https://teorin-core.firebaseio.com/blog.json' + query)
+    axios.get('blog.json' + query)
     .then(response => {
       this.setPagePosts(preparePosts(response.data), endIndex + 1);
     })
@@ -48,7 +48,7 @@ class Blog extends Component {
   }
 
   onClickHandler = () => {
-    this.getPosts(this.state.pageIndex);
+    this.fetchPosts(this.state.pageIndex);
   }
 
   render() {
