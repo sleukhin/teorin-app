@@ -1,0 +1,2 @@
+export const FETCH_SERVICES = 'FETCH_SERVICES';
+export const SET_SERVICES = 'SET_SERVICES';

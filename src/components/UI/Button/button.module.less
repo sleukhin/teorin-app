@@ -1,32 +1,24 @@
-@import '../../../shared/less/variables.less';
-@import '../../../shared/less/mixins.less';
+@import (reference) '../../../shared/less/variables.less';
+@import (reference) '../../../shared/less/mixins.less';
 
-.btn {
-  .btnMixin();
-}
 .accent {
-  background-color: @accent;
-
-  &:hover {
-    background-color: lighten(@accent, 5%);
-  }
-  &:active {
-    background-color: darken(@accent, 5%);
-  }
+  .btnMixin();
+  .btnBigMixin();
+  .accentMixin();
+}
+.accentSmall {
+  .btnMixin();
+  .accentMixin();
 }
 .default {
-  background-color: @grey;
-
-  &:hover {
-    background-color: lighten(@grey, 5%);
-  }
-  &:active {
-    background-color: darken(@grey, 5%);
-  }
+  .btnMixin();
+  .btnBigMixin();
+  .defaultMixin();
 }
 
 @media @mediumDevices, @largeDevices, @extraLargeDevices {
-  .btn {
+  .accent,
+  .default {
     font-size: 20px;
   }
 }

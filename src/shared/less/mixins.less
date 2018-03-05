@@ -1,17 +1,44 @@
+@import (reference) './variables.less';
+
 .btnMixin() {
   margin: 10px;
-  padding: 10px 60px;
   border: none;
-  font-size: 18px;
-  font-weight: 800;
   color: white;
   border-radius: 2px;
   line-height: 1.75;
   cursor: pointer;
 };
 
+.btnBigMixin() {
+  padding: 10px 60px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
 .imgResponsiveMixin() {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.accentMixin() {
+  background-color: @accent;
+
+  &:hover {
+    background-color: lighten(@accent, 5%);
+  }
+  &:active {
+    background-color: darken(@accent, 5%);
+  }
+}
+
+.defaultMixin() {
+  background-color: @grey;
+
+  &:hover {
+    background-color: lighten(@grey, 5%);
+  }
+  &:active {
+    background-color: darken(@grey, 5%);
+  }
 }
