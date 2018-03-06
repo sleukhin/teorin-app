@@ -9,6 +9,10 @@ class Services extends Component {
     this.props.initServices();
   }
 
+  handleClick = id => {
+    this.props.addToCart(this.props.services.find(item => item.id === id));
+  }
+
   render() {
     const { services } = this.props;
 
@@ -16,7 +20,13 @@ class Services extends Component {
       <div>
         <h1>Services</h1>
         {services.map(service => (
-          <Service key={service.id} service={service} />
+          <Service
+            key={service.id}
+            service={service}
+            onClick={() => {
+              this.handleClick(service.id);
+            }}
+          />
         ))}
       </div>
     );
@@ -31,7 +41,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    initServices: () => dispatch(actions.initServices())
+    initServices: () => dispatch(actions.initServices()),
+    addToCart: item => dispatch(actions.addToCart(item))
   };
 };
 

@@ -59,7 +59,7 @@ class Blog extends Component {
         <h1>Blog</h1>
         <BlogItems items={posts} />
         <div className={styles.buttonCase}>
-          <Button onClick={this.onClickHandler} btnType='default'>Load More</Button>
+          <Button onClick={this.onClickHandler} btnType='default'>More</Button>
         </div>
       </Container>
     );

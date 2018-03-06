@@ -1,11 +1,16 @@
 import React from 'react';
 import Button from '../../../UI/Button';
+import styles from './service.module.less';
 
-const Service = ({ service }) => (
-  <div>
-    <h3>{service.title}</h3>
-    <p>{service.desc}</p>
-    <Button btnType="accentSmall">Add to Cart</Button>
+const Service = ({ service, onClick }) => (
+  <div className={styles.service}>
+    <div className={styles.serviceContent}>
+      <h3 className={styles.header}>{service.title}</h3>
+      <p className={styles.description}>{service.desc}</p>
+      <Button onClick={onClick} btnType="accentSmall" btnClass={styles.btn}>
+        Add to Cart
+      </Button>
+    </div>
   </div>
 );
 
