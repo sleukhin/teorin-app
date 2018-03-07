@@ -1,32 +1,36 @@
 @import (reference) '../../../shared/less/variables.less';
 @import (reference) '../../../shared/less/mixins.less';
 
-.accent {
-  .btnMixin();
-  .btnBigMixin();
-  .accentMixin();
-}
-.accentSmall {
-  .btnMixin();
-  .accentMixin();
-  padding-left: 10px;
-  padding-right: 10px;
-}
 .default {
-  .btnMixin();
-  .btnBigMixin();
-  .defaultMixin();
+  .btnDefaultMixin();
 }
-.defaultSmall {
-  .btnMixin();
-  .defaultMixin();
-  padding-left: 10px;
-  padding-right: 10px;
+
+.primary {
+  .btnAccentMixin();
+}
+
+.secondary {
+  .btnSecondaryMixin();
+}
+
+.danger {
+  .btnDangerMixin();
+}
+
+.defaultSize {
+  .btnDefaultSizeMixin();
+}
+
+.smallSize {
+  .btnSmallMixin();
+}
+
+.largeSize {
+  .btnLargeMixin();
 }
 
 @media @mediumDevices, @largeDevices, @extraLargeDevices {
-  .accent,
-  .default {
+  .largeSize {
     font-size: 20px;
   }
 }

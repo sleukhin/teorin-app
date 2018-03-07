@@ -7,7 +7,7 @@ const Service = ({ service, onClick }) => (
     <div className={styles.serviceContent}>
       <h3 className={styles.header}>{service.title}</h3>
       <p className={styles.description}>{service.desc}</p>
-      <Button onClick={onClick} btnType="accentSmall" btnClass={styles.btn}>
+      <Button onClick={onClick} type="primary" btnClass={styles.btn}>
         Add to Cart
       </Button>
     </div>

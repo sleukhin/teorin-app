@@ -1,38 +1,74 @@
 @import (reference) './variables.less';
 
-.btnMixin() {
-  margin: 10px;
-  border: none;
-  color: white;
-  border-radius: 2px;
-  line-height: 1.75;
-  cursor: pointer;
-
-  &:disabled {
-    cursor: not-allowed;
-    color: rgba(0, 0, 0, 0.25);
-    background-color: #f5f5f5;
-
-    &:hover {
-      color: rgba(0, 0, 0, 0.25);
-      background-color: #f5f5f5;
-    }
-  }
-};
-
-.btnBigMixin() {
-  padding: 10px 60px;
-  font-size: 18px;
-  font-weight: 800;
-}
-
 .imgResponsiveMixin() {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.accentMixin() {
+.btnMixin() {
+  margin: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  line-height: 1.75;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.25);
+    background-color: #f5f5f5;
+    border-color: rgb(217, 217, 217);
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.25);
+      border-color: rgb(217, 217, 217);
+      background-color: #f5f5f5;
+    }
+  }
+};
+
+.btnDefaultSizeMixin() {
+  padding: 0 15px;
+  font-size: 14px;
+  height: 32px;
+}
+
+.btnSmallMixin() {
+  padding: 0 7px;
+  font-size: 14px;
+}
+
+.btnLargeMixin() {
+  padding: 10px 60px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.btnDefaultMixin {
+  .btnMixin();
+  background-color: white;
+  color: rgba(0, 0, 0, 0.65);
+  border-color: rgb(217, 217, 217);
+
+  &:hover {
+    color: lighten(@accent, 5%);
+    border-color: lighten(@accent, 5%);
+  }
+  &:active {
+    color: darken(@accent, 5%);
+    border-color: darken(@accent, 5%);
+  }
+}
+
+.btnAccentMixin() {
+  .btnMixin();
+  color: white;
+  border-color: @accent;
   background-color: @accent;
 
   &:hover {
@@ -43,13 +79,36 @@
   }
 }
 
-.defaultMixin() {
+.btnSecondaryMixin() {
+  .btnMixin();
+  color: white;
+  border-color: @grey;
   background-color: @grey;
 
   &:hover {
+    border-color: lighten(@grey, 5%);
     background-color: lighten(@grey, 5%);
   }
   &:active {
+    border-color: darken(@grey, 5%);
     background-color: darken(@grey, 5%);
+  }
+}
+
+.btnDangerMixin() {
+  .btnMixin();
+  color: @danger;
+  background-color: rgb(245, 245, 245);
+  border-color: rgb(217, 217, 217);
+
+  &:hover {
+    color: #fff;
+    background-color: lighten(@danger, 5%);
+    border-color: lighten(@danger, 5%);
+  }
+  &:active {
+    color: #fff;
+    background-color: darken(@danger, 5%);
+    border-color: darken(@danger, 5%);
   }
 }

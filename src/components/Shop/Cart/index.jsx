@@ -21,12 +21,13 @@ const Cart = (props) => (
           </div>
           <div>
             <Button
-              btnType="defaultSmall"
+              type="danger"
+              size="small"
               onClick={() => { props.onRemoveItem(item.id) }}>
               less
             </Button>
             <Button
-              btnType="accentSmall"
+              size="small"
               onClick={() => { props.onAddItem(item) }}>
               more
             </Button>
@@ -35,7 +36,7 @@ const Cart = (props) => (
       </div>
     ))}
     <p>Total Price: <span className={styles.quantity}>$ {props.totalPrice}</span></p>
-    <Button disabled={!props.cartHasItems} btnType="accentSmall" btnClass={styles.btn}>Checkout</Button>
+    <Button disabled={!props.cartHasItems} type="primary" btnClass={styles.btn}>Checkout</Button>
   </div>
 );
 

@@ -1,23 +1,18 @@
 @import (reference) './variables.less';
 @import (reference) './mixins.less';
 
-.linkBtnAccess {
-  .btnMixin();
-  .btnBigMixin();
+.primary {
+  .btnAccentMixin();
   display: inline-block;
   text-decoration: none;
+}
 
-  background-color: @accent;
-  &:hover {
-    background-color: lighten(@accent, 5%);
-  }
-  &:active {
-    background-color: darken(@accent, 5%);
-  }
+.large {
+  .btnLargeMixin();
 }
 
 @media @mediumDevices, @largeDevices, @extraLargeDevices {
-  .linkBtnAccess {
+  .largeSize {
     font-size: 20px;
   }
 }
