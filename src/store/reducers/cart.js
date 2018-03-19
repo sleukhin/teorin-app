@@ -3,7 +3,8 @@ import { addToCart, removeFromCart } from './helpers/cart';
 
 const initialState = {
   services: [],
-  totalPrice: 0
+  totalPrice: 0,
+  hasItems: false
 };
 
 const reducer = (state = initialState, action) => {
