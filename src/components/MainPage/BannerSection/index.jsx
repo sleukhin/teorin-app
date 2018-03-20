@@ -15,8 +15,8 @@ const BannerSection = props => (
           Teorin Core<span className={styles.accent}>]</span>
         </span>
       </h1>
-      <Button btnType="accent" btnClass={styles.btn}>Explore</Button>
-      <Button btnType="default" btnClass={styles.btn}>View Projects</Button>
+      <Button type="primary" size="large" btnClass={styles.btn}>Explore</Button>
+      <Button type="secondary" size="large" btnClass={styles.btn}>View Projects</Button>
     </div>
   </section>
 );

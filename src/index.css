@@ -37,6 +37,12 @@ body, input, textarea, select, button {
   color: #333;
 }
 
+.App {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
 .fade-enter {
   opacity: 0;
   z-index: 1;

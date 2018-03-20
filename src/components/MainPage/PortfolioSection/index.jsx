@@ -23,7 +23,7 @@ class PortfolioSection extends Component {
       <section>
         <Portfolio items={this.state.items} />
         <div className={styles.buttonCase}>
-          <Button btnType="accent">View Portfolio</Button>
+          <Button type="primary" size="large">View Portfolio</Button>
         </div>
       </section>
     );

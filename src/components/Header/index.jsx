@@ -18,6 +18,8 @@ const Header = props => {
             <ul className={styles.navLinks}>
               <li><NavLink to='/'>Home</NavLink></li>
               <li><NavLink to='/blog'>Blog</NavLink></li>
+              <li><NavLink to='/shop/services'>Our Services</NavLink></li>
+              <li><NavLink to='/shop/cart'>Cart</NavLink></li>
             </ul>
           </nav>
         </div>

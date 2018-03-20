@@ -20,6 +20,7 @@ class BlogSection extends Component {
 
   render() {
     const { posts } = this.state;
+    const linkClasses = [linkStyles.primary, linkStyles.large].join(' ');
 
     return (
       <section className={styles.blogSection}>
@@ -28,7 +29,7 @@ class BlogSection extends Component {
           <BlogItems items={posts} />
         </Container>
         <div className={styles.buttonCase}>
-          <Link className={linkStyles.linkBtnAccess} to='/blog'>View Blog</Link>
+          <Link className={linkClasses} to='/blog'>View Blog</Link>
         </div>
       </section>
     );
