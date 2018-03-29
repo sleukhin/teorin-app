@@ -25,3 +25,6 @@ yarn-error.log*
 
 # static fonts
 /public/fonts/*
+
+# secret API KEY
+/src/secret.js
